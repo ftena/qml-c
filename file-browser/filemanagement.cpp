@@ -1,4 +1,4 @@
-#include "FileManagement.h"
+#include "filemanagement.h"
 
 FileManagement::FileManagement(QObject *parent) : QObject(parent)
 {
