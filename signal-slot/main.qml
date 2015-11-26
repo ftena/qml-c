@@ -5,6 +5,8 @@ Window {
     id: mainwindow
     visible: true
 
+    signal qmlWindowDataSignal(var anObject)
+
     Item {
         id: rootitem
         objectName: "item"
@@ -12,21 +14,27 @@ Window {
 
         property int someNumber: 100
 
-        Text {
+        TextEdit {
+            id: textedit
+            objectName: "textEdit"
+            width: 240
+            font.pointSize: 20
             text: rootitem.someNumber
+            focus: true
         }
 
         MouseArea {
             id: mainButtonMouseArea
             objectName: "mainButtonMouseArea"
 
-            signal qmlSignal(string msg, var anObject)
+            signal qmlItemDataSignal(string msg, var anObject)
             signal qmlSignalMain(string msg)
 
             anchors.fill: parent
             onClicked: {
                 console.log("clicked")
-                qmlSignal("Hello from QML", rootitem)
+                qmlItemDataSignal("Hello from QML", rootitem)
+                qmlWindowDataSignal(mainwindow)
                 qmlSignalMain("Hello from QML - connected in main function")
 
             }

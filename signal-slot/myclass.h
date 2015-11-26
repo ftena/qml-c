@@ -12,9 +12,11 @@ public:
 
 private:
     QObject *item;
+    QObject *mainWindow;
 
 public slots:
-    void cppSlot(const QString &msg, const QVariant &v);
+    void cppItemDataSlot(const QString &msg, const QVariant &v);
+    void cppWindowDataSlot(const QVariant &v);
     void cppSlotInMain(const QString &msg);
 };
 
