@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QDebug>
 #include "myclass.h"
 
 int main(int argc, char *argv[])
@@ -14,6 +15,7 @@ int main(int argc, char *argv[])
 
     MyClass myClass(rootObj);
 
+    // Connect QML to C++
     QObject::connect(item, SIGNAL(qmlSignalMain(QString)),
                          &myClass, SLOT(cppSlotInMain(QString)));
 

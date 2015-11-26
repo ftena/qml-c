@@ -10,8 +10,11 @@ class MyClass : public QObject
 public:
     MyClass(QObject *obj);
 
+private:
+    QObject *item;
+
 public slots:
-    void cppSlot(const QString &msg);
+    void cppSlot(const QString &msg, const QVariant &v);
     void cppSlotInMain(const QString &msg);
 };
 
