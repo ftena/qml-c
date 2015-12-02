@@ -1,27 +1,26 @@
 #include "customitem.h"
+#include <QDebug>
 
 CustomItem::CustomItem(QObject *parent)
-: QObject(parent), m_x(0), m_y(0)
+: QObject(parent), m_size(0)
 {
 }
 
-int CustomItem::x() const
+int CustomItem::size() const
 {
-    return m_x;
+    return m_size;
 }
 
-void CustomItem::setX(int x)
+void CustomItem::setSize(int size)
 {
-    m_x = x;
+    m_size = size;
+    emit sizeChanged(m_size);
 }
 
-int CustomItem::y() const
+void CustomItem::mouseClick()
 {
-    return m_y;
-}
+    qDebug() << "CustomItem::mouseClick()";
 
-void CustomItem::setY(int y)
-{
-    m_y = y;
+    emit clicked();
 }
 

@@ -12,26 +12,22 @@ class CustomItem: public QObject
      * Ref: http://doc.qt.io/qt-5/qtqml-cppintegration-exposecppattributes.html#exposing-properties
      */
 
-    Q_PROPERTY(int x READ x WRITE setX NOTIFY xChanged)
-    Q_PROPERTY(int y READ y WRITE setY NOTIFY yChanged)
-
+    Q_PROPERTY(int size READ size WRITE setSize NOTIFY sizeChanged)
 
 public:
     CustomItem(QObject *parent = 0);
 
-    int x() const;
-       void setX(int);
+    int size() const;
+    void setSize(int);
 
-       int y() const;
-       void setY(int);
+    Q_INVOKABLE void mouseClick();
 
 private:
-    int m_x;
-    int m_y;
+    int m_size;
 
 signals:
-    void xChanged();
-    void yChanged();
+    void sizeChanged(int size);
+    void clicked();
 
 public slots:
 };
