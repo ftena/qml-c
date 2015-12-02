@@ -1,19 +1,31 @@
 import QtQuick 2.5
 import QtQuick.Window 2.2
+import QtQuick.Controls 1.4
 
-Window {
+ApplicationWindow {
+    objectName: "rootWindow"
     visible: true
+    Column {
+        TextField {
+            id: textId1
+            objectName: "text1"
+            text: "text1 message"
+            focus: true
 
-    MouseArea {
-        anchors.fill: parent
-        onClicked: {
-            Qt.quit();
+            Keys.onPressed: { console.log("textId1: " + event.key + " : " + event.text) }
         }
-    }
 
-    Text {
-        text: qsTr("Hello World")
-        anchors.centerIn: parent
+        TextField {
+            id: textId2
+            objectName: "text2"
+            text: "text2 message"
+
+            Keys.onPressed: { console.log("textId2: " + event.key + " : " + event.text) }
+        }
+        Button {
+            objectName: "button"
+            text : "Click me";
+        }
     }
 }
 
