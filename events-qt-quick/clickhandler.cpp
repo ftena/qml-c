@@ -16,7 +16,7 @@ void ClickHandler::handleClick()
         qDebug() << "NO item";
 
     Qt::Key key = Qt::Key_B;
-    //QKeyEvent* event = new QKeyEvent(QKeyEvent::KeyPress, key, Qt::NoModifier);
+    //QKeyEvent* event = new QKeyEvent(QKeyEvent::KeyPress, key, Qt::NoModifier);    
     QKeyEvent* event = new QKeyEvent(QKeyEvent::KeyPress,
                                      key,
                                      Qt::NoModifier,

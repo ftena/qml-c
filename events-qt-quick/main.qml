@@ -12,7 +12,9 @@ ApplicationWindow {
             text: "text1 message"
             focus: true
 
-            Keys.onPressed: { console.log("textId1: " + event.key + " : " + event.text) }
+            Keys.onPressed: {
+                console.log("textId1: " + event.key + " : " + event.text)
+            }
         }
 
         TextField {
@@ -20,7 +22,11 @@ ApplicationWindow {
             objectName: "text2"
             text: "text2 message"
 
-            Keys.onPressed: { console.log("textId2: " + event.key + " : " + event.text) }
+            Keys.onPressed: {
+                if (event.key === Qt.Key_B) {
+                    console.log("I like B's but not QString's")
+                }
+            }
         }
         Button {
             objectName: "button"

@@ -30,7 +30,10 @@ Window {
 
         MouseArea {
             anchors.fill: parent
-            onClicked: { customItem.mouseClick() }
+            onClicked: {
+                customItem.mouseClick()
+                customItem.test()
+            }
         }
     }
 }

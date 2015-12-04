@@ -30,6 +30,7 @@ signals:
     void clicked();
 
 public slots:
+    void test();
 };
 
 #endif // CUSTOMITEM_H

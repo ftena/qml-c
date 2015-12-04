@@ -28,8 +28,13 @@ void CustomItem::setSize(int size)
 
 void CustomItem::mouseClick()
 {
-    qDebug() << "CustomItem::mouseClick()";
+    qDebug() << this << " - CustomItem::mouseClick()";
 
     emit clicked();
+}
+
+void CustomItem::test()
+{
+    qDebug() << this << " - CustomItem::text()";
 }
 
