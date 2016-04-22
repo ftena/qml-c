@@ -7,5 +7,5 @@ HEADERS = \
 SOURCES = main.cpp \
     animal.cpp \
     animalmodel.cpp
-RESOURCES += abstractitem-model.qrc
+RESOURCES += abstractitem-model-tableview.qrc
 
