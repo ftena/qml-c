@@ -1,4 +1,4 @@
-TARGET = abstractitem-model
+TARGET = abstractitem-model-tableview
 QT += qml quick
 
 HEADERS = \
