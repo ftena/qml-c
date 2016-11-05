@@ -1,4 +1,4 @@
-TARGET = abstractitem-model-combobox
+TARGET = models-abstractlistmodel-combobox
 QT += qml quick
 
 HEADERS = \
@@ -9,5 +9,5 @@ SOURCES = main.cpp \
     animal.cpp \
     animalmodel.cpp \
     comboboxmanagement.cpp
-RESOURCES += abstractitem-model-combobox.qrc
+RESOURCES += models-abstractlistmodel-combobox.qrc
 
