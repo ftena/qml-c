@@ -1,46 +1,35 @@
 #include "animalmodel.h"
-#include <QDebug>
-#include <QListIterator>
 
 AnimalModel::AnimalModel(QObject *parent)
-    : QAbstractListModel(parent)
+    : QStandardItemModel(parent)
 {
+
 }
 
 void AnimalModel::addAnimal(const QString &type, const QString &size)
 {
-    addAnimal(Animal(type, size));
-}
+    QStandardItem* entry = new QStandardItem();
+    entry->setData(type, TypeRole);
 
-void AnimalModel::addAnimal(const Animal &animal)
-{
-    beginInsertRows(QModelIndex(), rowCount(), rowCount());
-    m_animals << animal;
-    endInsertRows();
-}
+    auto childEntry = new QStandardItem();
+    childEntry->setData(size, SizeRole);
+    entry->appendRow(childEntry);
 
-void AnimalModel::removeAnimal(int row)
-{
-    beginRemoveRows(QModelIndex(), row, row);
-    m_animals.removeAt(row);
-    removeRow(row, QModelIndex());
-    endRemoveRows();
-}
-
-int AnimalModel::rowCount(const QModelIndex & parent) const {
-    Q_UNUSED(parent);
-    return m_animals.count();
+    appendRow( entry );
 }
 
 QVariant AnimalModel::data(const QModelIndex & index, int role) const {
-    if (index.row() < 0 || index.row() >= m_animals.count())
-        return QVariant();
+    QStandardItem *myitem = itemFromIndex(index);
 
-    const Animal &animal = m_animals[index.row()];
     if (role == TypeRole)
-        return animal.type();
-    else if (role == SizeRole)
-        return animal.size();
+        return myitem->data(TypeRole);
+    else if (role == SizeRole) {
+        if (myitem->child(0) != 0)
+        {
+            return myitem->child(0)->data(SizeRole);
+        }
+    }
+
     return QVariant();
 }
 

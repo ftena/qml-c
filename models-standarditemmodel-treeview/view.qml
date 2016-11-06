@@ -62,28 +62,11 @@ ApplicationWindow {
                     anchors.leftMargin: 5
                 }
             }
-
-            RowLayout {
-                Button {
-                    id: deleteButton
-
-                    anchors.verticalCenter: parent.verticalCenter
-
-                    text: "Delete item"
-
-                    onClicked: {
-                        if(tableView.currentRow != -1)
-                        {
-                            myModel.removeAnimal(tableView.currentRow)
-                        }
-                    }
-                }
-            }
         }
     }
 
-    TableView {
-        id: tableView
+    TreeView  {
+        id: treeView
 
         frameVisible: false
         sortIndicatorVisible: true
@@ -98,13 +81,11 @@ ApplicationWindow {
         TableViewColumn {
             role: "type"
             title: "Type"
-            width: 100
         }
 
         TableViewColumn {
             role: "size"
             title: "Size"
-            width: 200
         }
 
         model: myModel

@@ -4,17 +4,15 @@
 #include <QQmlApplicationEngine>
 #include <qqmlcontext.h>
 #include <qqml.h>
-#include <QtQuick/qquickitem.h>
-#include <QtQuick/qquickview.h>
 
 int main(int argc, char ** argv)
 {
     QGuiApplication app(argc, argv);
 
     AnimalModel model;
-    model.addAnimal(Animal("Wolf", "Medium"));
-    model.addAnimal(Animal("Polar bear", "Large"));
-    model.addAnimal(Animal("Quoll", "Small"));
+    model.addAnimal("Wolf", "Medium");
+    model.addAnimal("Polar bear", "Large");
+    model.addAnimal("Quoll", "Small");
 
     QQmlApplicationEngine engine;
 
