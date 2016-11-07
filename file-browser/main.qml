@@ -58,7 +58,8 @@ ApplicationWindow {
         model: fileSystemModel
         selection: sel
 
-        onCurrentIndexChanged: console.log("current index", currentIndex)
+        onCurrentIndexChanged: console.log("current index: " + currentIndex
+                                           + " current row: " + currentIndex.row)
 
         TableViewColumn {
             title: "Name"
