@@ -11,7 +11,7 @@ QVariant MySqlTableModel::data ( const QModelIndex & index, int role ) const
         return QSqlQueryModel::data(index, role);
     }
     else {
-        return QSqlQueryModel::data(this->index(index.row(), role - Qt::UserRole - 1), Qt::DisplayRole);
+        return QSqlQueryModel::data(this->index(index.row(), role - Qt::UserRole), Qt::DisplayRole);
     }
 }
 
