@@ -8,7 +8,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-set(PROJECT "MinimalQml")
+set(PROJECT "virtualkeyboard-cmake-56202469")
 
 project(${PROJECT})
 
